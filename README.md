@@ -278,6 +278,18 @@ You will need to enable the integration between Travis and GitHub. See the
 For more information on AngularJS please check out [angularjs.org][angularjs].
 
 
+## Firebase Deploy
+
+Hosting Angular 2 Applications On Firebase, please check out [Medium Article][medium-angular-firebase-deploy]. Follow instructions from Step 3.
+
+## Angular Routing 
+
+If you want to navigate to different pages in your application, but you also want the application to be a SPA (Single Page Application), with no page reloading, you can use the [ngRoute][ng-route-starter] module.
+
+## Integrating Api Calls
+
+$http is used in integrating Http calls(Get, Post). You can add $http to view controller using this [approach][$http-starter] . If you get any issue, you can refer [here][$http-$scope-integrate]
+
 [angularjs]: https://angularjs.org/
 [bower]: http://bower.io/
 [git]: https://git-scm.com/
@@ -293,3 +305,8 @@ For more information on AngularJS please check out [angularjs.org][angularjs].
 [selenium]: http://docs.seleniumhq.org/
 [travis]: https://travis-ci.org/
 [travis-docs]: https://docs.travis-ci.com/user/getting-started
+[$http-starter]: https://www.sitepoint.com/api-calls-angularjs-http-service/
+[$http-$scope-integrate]: https://stackoverflow.com/questions/24478293/cannot-read-property-get-of-undefined-with-angular
+[cors-rails]: https://stackoverflow.com/questions/17858178/allow-anything-through-cors-policy
+[medium-angular-firebase-deploy]: https://medium.com/codingthesmartway-com-blog/hosting-angular-2-applications-on-firebase-f194688c978d
+[ng-route-starter]: https://www.w3schools.com/angular/angular_routing.asp 

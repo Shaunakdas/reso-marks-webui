@@ -9,6 +9,14 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
-
+.controller('View1Ctrl', ['$scope','$http', function ($scope, $http) {
+    $http.get('https://66221cf0.ngrok.io/api/reference_scores.json')
+        .success(function(data, status, headers, config) {
+          $scope.details = data;
+        })
+        .error(function(data, status, headers, config) {
+          // log error
+    });
 }]);
+
+

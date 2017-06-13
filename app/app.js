@@ -6,7 +6,9 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version'
-]).
+]).run(['$rootScope','$http',function($rootScope, $http) {
+  $rootScope.base_url_api = "http://localhost:3000/"
+}]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
