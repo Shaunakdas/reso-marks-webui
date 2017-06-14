@@ -45,7 +45,21 @@
       </div>
     </md-toolbar>
     <div  >
-      <canvas id="bar" chart-dataset-override="datasetOverride" chart-options = "difficulty_options" chart-colors="colors" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series" layout-fill layout-align="center center"></canvas>
+      <canvas id="bar" chart-dataset-override="difficulty_datasetOverride" chart-options = "difficulty_options" chart-colors="difficulty_colors" class="chart chart-bar" chart-data="difficulty_data" chart-labels="difficulty_labels" chart-series="difficulty_series" layout-fill layout-align="center center"></canvas>
+    </div>
+  </md-card>
+  <md-card  md-theme-watch="" class="small">
+    <md-toolbar >
+      <div class="md-toolbar-tools">
+        <h1 class="md-flex">Difficulty Analysis</h1>
+        <span flex=""></span>
+        <md-button class="md-raised" ng-click="showDialogInfo($event,relAnalysisInfoTitle,relAnalysisInfoContent)" aria-label="Learn More">
+          Learn More
+        </md-button>
+      </div>
+    </md-toolbar>
+    <div  >
+      <canvas id="bar" chart-dataset-override="relative_datasetOverride" chart-options = "relative_options" chart-colors="relative_colors" class="chart chart-bar" chart-data="relative_data" chart-labels="relative_labels" chart-series="relative_series" layout-fill layout-align="center center"></canvas>
     </div>
   </md-card>
   <md-card  md-theme-watch="" class="small">
