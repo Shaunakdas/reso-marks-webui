@@ -1,0 +1,50 @@
+<!-- <p>This is the partial for view 2.{{details.ref_scores[0].name}}</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+ -->
+ <style>
+  .hidden{
+    display: none;
+  }
+</style>
+ 
+<div layout="row" layout-align="center center">
+    <div flex-gt-sm="25" flex-gt-xs="10" flex="20"></div> 
+    <form layout-padding md-whiteframe="4" ng-submit="submitStudentForm()" layout="column" flex-gt-sm="50" flex-gt-xs="80" flex="100">
+
+		<md-content layout-padding ng-cloak>
+		 <md-card ng-repeat="(key, name) in exam_list">
+	        <md-card-title>
+	          <md-card-title-text>
+	            <span class="md-headline">{{key}}</span>
+	            <span class="md-subhead">AIR {{name}}</span>
+	          </md-card-title-text>
+	          <md-card-title-media>
+	            <div class="md-media-sm card-media"></div>
+	          </md-card-title-media>
+	        </md-card-title>
+	        <md-card-actions layout="row" layout-align="end center">
+	          <md-button type="submit" class="md-raised md-primary" ng-click="getExamAnalysis()">Result Analysis</md-button>
+	        </md-card-actions>
+	      </md-card>
+		  	<!-- <div layout-gt-xs="row">
+	  			<md-input-container class="md-block" flex-gt-sm>
+		        	<label>Roll Number</label>
+		        	<input ng-model="$ctrl.user.number" required>
+		      	</md-input-container>
+	  			<md-input-container class="md-block" flex-gt-sm>
+		        	<label>Date of Birth</label>
+		        	<md-datepicker ng-model="user.submissionDate"></md-datepicker>
+		      	</md-input-container>
+		    </div>  
+		    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+		    
+		      <md-button type="submit" class="md-raised md-primary">Start</md-button>
+		      <md-button type="reset" class="md-raised" ng-click="$ctrl.resetForm()">Reset</md-button>
+		    </section> -->
+		</md-content>
+      </form>
+     <div flex-gt-sm="25" flex-gt-xs="10" flex="0"></div>
+   </div>

@@ -10,17 +10,9 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ['$scope','$http','userService', function ($scope, $http, userService) {
-    var one = $http.get('https://ff61d493.ngrok.io/api/analytics/get_analytics?rollno=16437970&exam_id=1')
-        .success(function(data, status, headers, config) {
-          // $scope.details = data
-          userService.setResponse(data);
-          $scope.details = userService.getResponse();
-          initCall();
-        })
-        .error(function(data, status, headers, config) {
-          // log error
-    });
-        function initCall(){
+      $scope.details = userService.getResponse();
+      initAnalyticsCall();
+        function initAnalyticsCall(){
           console.log($scope.details);
           $scope.diffAnalysisInfoTitle = "More about Difficulty Analysis";
         $scope.diffAnalysisInfoContent = "In this section, you can see analysis of your attempt based on different difficulty levels. With respect to each level of difficulty, you can see total questions in the paper and number of questions correctly attempted by you.";
@@ -41,6 +33,21 @@ angular.module('myApp.view1', ['ngRoute'])
                 beginAtZero:true
             }
         };
+        $scope.weakFilter = function(data,score){
+            console.log("weak filter"+ (score <= 0.25));
+            return score <= 0.25;
+        };
+        // $scope.disabled1 =18;
+        $scope.readonly =true;
+        $scope.responseType = function(data){
+          if (data==1){return "Incorrect";}
+          else if (data==0){return "Correct";}
+          else if (data==2){return "Unattempted";}
+        }
+        $scope.productSlider = function(data){
+          return 100*data;
+        }
+        
           // Difficulty Breakup Graph section
         $scope.difficulty_colors = ['#f44242', '#42f4f1', '#40E0D0'];
         $scope.difficulty_labels = $scope.details.difficulty_breakup.name;

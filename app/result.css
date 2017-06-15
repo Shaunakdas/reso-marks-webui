@@ -18,7 +18,7 @@
   width: 300px;
 }
 .small {
-    width: 450px;
+    width: 350px;
     border: 1px solid black;
     display: -webkit-flex; /* Safari */
     display: flex;

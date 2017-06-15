@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>ResoStart Analysis page</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,7 +31,11 @@
       <md-button class="md-icon-button" ng-click="$ctrl.toggleSidenav()">
         <md-icon class="material-icons" aria-label="Menu">menu</md-icon>
       </md-button>
-      <h3>SuperMath</h3>
+      <h3>ResoStart</h3>
+      <span flex=""></span>
+        <md-button class="md-raised" onclick="window.location.href='#!/view2'" aria-label="Learn More">
+          Logout
+        </md-button>
     </div>
   </md-toolbar>
   <section layout="row" flex style="min-height: 100%">
@@ -42,14 +46,15 @@
     <md-content flex layout-padding layout="column" style="min-height:calc(100% - 64px);">
         
 
-        <ul class="menu">
-          <li><a href="#!/view1">view1</a></li>
-          <li><a href="#!/view2">view2</a></li>
-        </ul>
+        <!-- <ul class="menu">
+          <li><a href="#!/view2">Input Form</a></li>
+          <li><a href="#!/exam-list">Exam List</a></li>
+          <li><a href="#!/view1">Result Page</a></li>
+        </ul> -->
         <!-- Angular Content IMPORTANT -->
         <div ng-view></div>
 
-        <div>Angular seed app: v<span app-version></span></div>
+        <!-- <div>Angular seed app: v<span app-version></span></div> -->
 
       </md-content>
        <!-- <md-content flex layout-padding layout="column" style="min-height:calc(100% - 64px);">
@@ -93,6 +98,7 @@
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
+  <script src="exam-list/exam-list.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

@@ -1,9 +1,13 @@
+<div layout="row" layout-align="center center">
+
 <md-content class="md-padding" layout-xs="column" layout="column" layout-align="center center" >
+<md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Dashboard">
 <p>This is the partial for view 1.{{details.air}}</p>
       <div flex-xs="" flex-gt-xs="50" layout="column" layout-align="center center">
       <h1 class="md-flex">Stream Scores</h1>
       <md-card flex-xs="" flex-gt-xs="50" layout="row" layout-xs="column" layout-align="center center">
-        <md-card md-theme-watch="" md-whiteframe="12" class="stream">
+        <md-card md-theme-watch="" md-whiteframe="12" class="stream" style='background-color: #42f4f1'>
           <md-card-title>
             <md-card-title-text layout="column" layout-align="center center">
               <span class="md-headline">{{stringWrapper("stream-Name")}}</span>
@@ -34,95 +38,6 @@
         </md-card>
       </div>
     </div>
-  <md-card  md-theme-watch="" class="small">
-    <md-toolbar >
-      <div class="md-toolbar-tools">
-        <h1 class="md-flex">Difficulty Analysis</h1>
-        <span flex=""></span>
-        <md-button class="md-raised" ng-click="showDialogInfo($event,diffAnalysisInfoTitle,diffAnalysisInfoContent)" aria-label="Learn More">
-          Learn More
-        </md-button>
-      </div>
-    </md-toolbar>
-    <div  >
-      <canvas id="bar" chart-dataset-override="difficulty_datasetOverride" chart-options = "difficulty_options" chart-colors="difficulty_colors" class="chart chart-bar" chart-data="difficulty_data" chart-labels="difficulty_labels" chart-series="difficulty_series" layout-fill layout-align="center center"></canvas>
-    </div>
-  </md-card>
-  <md-card  md-theme-watch="" class="small">
-    <md-toolbar >
-      <div class="md-toolbar-tools">
-        <h1 class="md-flex">Difficulty Analysis</h1>
-        <span flex=""></span>
-        <md-button class="md-raised" ng-click="showDialogInfo($event,relAnalysisInfoTitle,relAnalysisInfoContent)" aria-label="Learn More">
-          Learn More
-        </md-button>
-      </div>
-    </md-toolbar>
-    <div  >
-      <canvas id="bar" chart-dataset-override="relative_datasetOverride" chart-options = "relative_options" chart-colors="relative_colors" class="chart chart-bar" chart-data="relative_data" chart-labels="relative_labels" chart-series="relative_series" layout-fill layout-align="center center"></canvas>
-    </div>
-  </md-card>
-  <md-card  md-theme-watch="" class="small">
-    <md-toolbar >
-      <div class="md-toolbar-tools">
-        <h1 class="md-flex">Attempt Breakup</h1>
-        <span flex=""></span>
-        <md-button class="md-raised" ng-click="showDialogInfo($event,attemptBreakupInfoTitle,attemptBreakupInfoContent)" aria-label="Learn More">
-          Learn More
-        </md-button>
-      </div>
-    </md-toolbar>
-    <div layout="column" layout-align="center center" class="pie">
-      <canvas id="doughnut" chart-colors="attempt_colors" class="chart chart-doughnut" chart-data="attempt_data" chart-labels="attempt_labels" ></canvas> 
-    </div>
-  </md-card>
-  <md-card  md-theme-watch="" class="small">
-    <md-toolbar >
-      <div class="md-toolbar-tools">
-        <h1 class="md-flex">Topicwise Analysis</h1>
-        <span flex=""></span>
-        <md-button class="md-raised" ng-click="showDialogInfo($event,topicwiseAnalysisInfoTitle,topicwiseAnalysisInfoContent)" aria-label="Learn More">
-          Learn More
-        </md-button>
-      </div>
-    </md-toolbar>
-    <div  layout-fill layout-align="center center">
-      <canvas id="base" chart-series="topicwise_series" chart-options = "topic_options" chart-colors="topicwise_colors" class="chart-horizontal-bar" chart-data="topicwise_data" chart-labels="topicwise_labels"  layout-fill></canvas> 
-    </div>
-  </md-card>
-  <md-card  md-theme-watch="" class="small">
-    <md-toolbar >
-      <div class="md-toolbar-tools">
-        <h1 class="md-flex">Topicwise Time Analysis</h1>
-        <span flex=""></span>
-        <md-button class="md-raised" ng-click="showDialogInfo($event,topicwiseTimeAnalysisInfoTitle,topicwiseTimeAnalysisInfoContent)" aria-label="Learn More">
-          Learn More
-        </md-button>
-      </div>
-    </md-toolbar>
-   
-    <div layout-fill layout-align="center center">
-    <canvas id="radar"  chart-series="topic_time_series" chart-options = "topic_time_options" chart-colors="time_colors"  class="chart chart-radar" chart-data="topic_time_data" chart-options="options" chart-labels="topic_labels" layout-fill></canvas> 
-    </div>
-     <md-list-item ng-repeat="topic in topic_time_labels">
-      <p> Topic#{{$index+1}}: {{topic}} </p>
-      <md-divider></md-divider>
-    </md-list-item>
-  </md-card>
-    <md-card  md-theme-watch="" class="small">
-    <md-toolbar >
-      <div class="md-toolbar-tools">
-        <h1 class="md-flex">Chapterwise Time Analysis</h1>
-        <span flex=""></span>
-        <md-button class="md-raised" ng-click="showDialogInfo($event,chapterwiseTimeAnalysisInfoTitle,chapterwiseTimeAnalysisInfoContent)" aria-label="Learn More">
-          Learn More
-        </md-button>
-      </div>
-    </md-toolbar>
-    <div  layout-fill layout-align="center center">
-      <canvas id="radar"  chart-series="chapter_time_series" chart-options = "chapter_time_options" chart-colors="time_colors"  class="chart-horizontal-bar" chart-data="chapter_time_data" chart-options="options" chart-labels="chapter_time_labels"></canvas> 
-    </div>
-  </md-card>
   <md-card  md-theme-watch="" class="large">
     <md-toolbar >
       <div class="md-toolbar-tools">
@@ -135,33 +50,155 @@
       </md-card-title-text>
     </md-card-title>
   </md-card>
-  <md-card class="large">
+ 
+<md-card class="large">
+      <md-toolbar >
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex">Reso Tip</h2>
+          <span flex=""></span>
+          <md-button class="md-raised" ng-click="showDialogInfo($event,resoTipInfoTitle,resoTipInfoContent)" aria-label="Learn More">
+            Learn More
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-card-title>
+        <span class="md-head">You need to work on following things</span>
+      </md-card-title>
+        <div  ng-repeat="(key,subject) in details.subjectwise_effective_score">
+          <md-subheader class="md-primary">{{key}}</md-subheader>
+          <md-list-item ng-repeat="(topic,score) in subject" ng-if="score < 0.25">
+              <p>{{topic}}</p>
+          </md-list-item>
+        </div>
+    </md-card>
+</md-tab>
+<md-tab label="Analysis">
+  
+<md-card  md-theme-watch="" class="large">
     <md-toolbar >
       <div class="md-toolbar-tools">
-        <h2 class="md-flex">Reso Tip</h2>
+        <h1 class="md-flex">Relative Comparison of Your Score vs. Average Score</h1>
         <span flex=""></span>
-        <md-button class="md-raised" ng-click="showDialogInfo($event,resoTipInfoTitle,resoTipInfoContent)" aria-label="Learn More">
+        <md-button class="md-raised" ng-click="showDialogInfo($event,relAnalysisInfoTitle,relAnalysisInfoContent)" aria-label="Learn More">
           Learn More
         </md-button>
       </div>
     </md-toolbar>
-    <md-card-title>
-    <span class="md-head">You need to work on following things</span>
-    </md-card-title>
-    <md-list-item>
-      <p> Tip#1 </p>
-      <md-divider></md-divider>
-    </md-list-item>
-    <md-list-item>
-      <p> Tip#2 </p>
-      <md-divider></md-divider>
-    </md-list-item>
+    <div  >
+      <canvas id="bar" chart-dataset-override="relative_datasetOverride" chart-options = "relative_options" chart-colors="relative_colors" class="chart chart-bar" chart-data="relative_data" chart-labels="relative_labels" chart-series="relative_series" layout-fill layout-align="center center"></canvas>
+    </div>
   </md-card>
+  <md-card  class="large" >
+      <md-toolbar >
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex">Score Card</h2>
+                    <span flex=""></span>
+          <md-button class="md-raised" ng-click="showDialogInfo($event,overallAnalysisInfoTitle,overallAnalysisInfoContent)" aria-label="Learn More">
+          Learn More
+        </md-button>
+        </div>
+      </md-toolbar>
+      <md-card-content>
+        <table layout-fill>
+          <thead>
+            <tr>
+              <th></th>
+              <th ng-repeat="(key, score) in details.subjectwise_reference_scores['Maximum Score']">
+                {{key}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="(key, score_type) in details.subjectwise_reference_scores">
+              <td>{{key}}</td>
+              <td ng-repeat="(key, score) in score_type">{{score}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </md-card-content>
+    </md-card>
+     <md-card  class="large" >
+      <md-toolbar >
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex">Overall Performance At Various Difficulty Levels</h2>
+                    <span flex=""></span>
+          <md-button class="md-raised" ng-click="showDialogInfo($event,overallAnalysisInfoTitle,overallAnalysisInfoContent)" aria-label="Learn More">
+          Learn More
+        </md-button>
+        </div>
+      </md-toolbar>
+      <md-card-content>
+        <table layout-fill>
+          <thead>
+            <tr>
+              <th>Questions</th>
+              <th>Out Of</th>
+              <th>Correct</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="(key, count) in details.difficulty_breakup_table">
+              <td>{{key}}</td>
+              <td ng-repeat="value in count">{{value}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </md-card-content>
+    </md-card>
+    <md-card  md-theme-watch="" class="large">
+      <md-toolbar >
+        <div class="md-toolbar-tools">
+          <h1 class="md-flex">Difficulty Analysis</h1>
+          <span flex=""></span>
+          <md-button class="md-raised" ng-click="showDialogInfo($event,diffAnalysisInfoTitle,diffAnalysisInfoContent)" aria-label="Learn More">
+            Learn More
+          </md-button>
+        </div>
+      </md-toolbar>
+      <div  >
+        <canvas id="bar" chart-dataset-override="difficulty_datasetOverride" chart-options = "difficulty_options" chart-colors="difficulty_colors" class="chart chart-bar" chart-data="difficulty_data" chart-labels="difficulty_labels" chart-series="difficulty_series" layout-fill layout-align="center center"></canvas>
+      </div>
+    </md-card>
+    <md-card class="large">
+      <md-toolbar >
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex">Topicwise Analysis</h2>
+          <span flex=""></span>
+          <md-button class="md-raised" ng-click="showDialogInfo($event,resoTipInfoTitle,resoTipInfoContent)" aria-label="Learn More">
+            Learn More
+          </md-button>
+        </div>
+      </md-toolbar>
+        <div  ng-repeat="(key,subject) in details.subjectwise_effective_score">
+          <md-subheader class="md-primary">{{key}}</md-subheader>
+         <!--  <md-card-title>
+            <span class="md-head">{{key}}</span>
+          </md-card-title> -->
+          <!-- <md-list-item  ng-repeat="(topic,score) in subject">
+            <p> {{score}} </p>
+            <md-divider></md-divider>
+          </md-list-item> -->
+          <md-list-item ng-repeat="(topic,score) in subject">
+              <p>{{topic}}</p>
+              <md-card class="small"> 
+                <md-slider-container ng-disabled="true">
+                  <md-slider ng-model="productSlider(subject[topic])" aria-label="Disabled 1" flex md-discrete ng-readonly="true"></md-slider>
+
+                  <md-input-container>
+                    <input flex type="decimal" ng-model="subject[topic]" aria-label="green" aria-controls="green-slider">
+                  </md-input-container>
+                </md-slider-container>
+              </md-card>
+          </md-list-item>
+        </div>
+    </md-card>
+</md-tab>
+<md-tab label="Macro Analysis">
   <md-card class="large"  >
   <md-toolbar >
     <div class="md-toolbar-tools">
       <span flex=""></span>
-      <h2 class="md-flex">Overall Performance At Various Difficulty Levels</h2>
+      <h2 class="md-flex">Questionwise Analysis</h2>
       <md-button class="md-raised" ng-click="showDialogInfo($event,overallAnalysisInfoTitle,overallAnalysisInfoContent)" aria-label="Learn More">
           Learn More
         </md-button>
@@ -171,33 +208,27 @@
       <table layout-fill>
         <thead>
           <tr>
-            <th>Difficulty</th>
-            <th>Correct</th>
-            <th>Incorrect</th>
-            <th>Unattempted</th>
-            <th>Out of</th>
+            <th>Q. No.</th>
+            <th>Subject</th>
+            <th>Topic</th>
+            <th>Difficulty Type</th>
+            <th>Your response</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Easy</td>
-            <td>10</td>
-            <td>20</td>
-            <td>10</td>
-            <td>40</td>
-          </tr>
-          <tr>
-            <td>Easy</td>
-            <td>10</td>
-            <td>20</td>
-            <td>10</td>
-            <td>40</td>
+          <tr ng-repeat = "score in details.user_question_score">
+            <td>{{score.seq}}</td>
+            <td>{{score.subject}}</td>
+            <td>{{score.topic}}</td>
+            <td>{{score.difficulty}}</td>
+            <td>{{responseType(score.answer)}}</td>
           </tr>
         </tbody>
       </table>
     </md-card-content>
      </div>  
-  </md-card> -->
+  </md-card> 
+  
 <!--   <md-card md-theme-watch="" >
     <md-toolbar >
       <div class="md-toolbar-tools">
@@ -263,3 +294,8 @@
   </md-card> -->
   </div>
 </md-content>
+
+</div>
+
+  </md-tab>
+</md-tabs>
