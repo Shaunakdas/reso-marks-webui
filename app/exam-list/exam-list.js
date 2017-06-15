@@ -11,9 +11,10 @@ angular.module('myApp.exam-list', ['ngRoute'])
 
 .controller('ExamListCtrl', ['$scope','$http','userService','$location',function($scope,$http,userService,$location) {
 	$scope.exam_list = userService.getExamList();
-	$scope.getExamAnalysis = function(){
+	$scope.getExamAnalysis = function(data){
+		console.log(data);
 		var rootApi = userService.getRootApi();
-		var one = $http.get(rootApi+'api/analytics/get_analytics?rollno=16437970&exam_id=1')
+		var one = $http.get(rootApi+'api/analytics/get_analytics?rollno='+userService.getRollNo()+'&exam_id='+data)
         .success(function(data, status, headers, config) {
           // $scope.details = data
           userService.setResponse(data);

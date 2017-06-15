@@ -18,7 +18,7 @@ angular.module('myApp', [
   this.getRootApi = function(){
     return 'https://9cb8477c.ngrok.io/';
   }
-  this.setRollno = function(data) {
+  this.setRollNo = function(data) {
           this.rollnumber = data;
   };
   this.getRollNo = function() {

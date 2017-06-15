@@ -16,7 +16,7 @@ angular.module('myApp.view2', ['ngRoute'])
 		// 	$scope.getCall=true;
   //       });
 		$scope.getCall=true;
-		userService.setRollno($scope.rollno);
+		userService.setRollNo($scope.rollno);
 		var rootApi = userService.getRootApi();
 		var one = $http.get(rootApi+'api/analytics/get_exam_list?rollno='+$scope.rollno)
 	        .success(function(data, status, headers, config) {

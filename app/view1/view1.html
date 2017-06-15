@@ -10,8 +10,8 @@
         <md-card md-theme-watch="" md-whiteframe="12" class="stream" style='background-color: #42f4f1'>
           <md-card-title>
             <md-card-title-text layout="column" layout-align="center center">
-              <span class="md-headline">{{stringWrapper("stream-Name")}}</span>
-              <span class="md-head">Score 1000</span>
+              <span class="md-headline">AIR</span>
+              <span class="md-head">{{details.air}}</span>
             </md-card-title-text>
             <md-card-title-media>
             </md-card-title-media>
@@ -23,22 +23,22 @@
         <md-card md-theme-watch="" md-whiteframe="7">
           <md-card-title>
             <md-card-title-text layout="column"  layout-align="center center">
-              <span class="md-head">Chapter Name</span>
-              <span class="md-subhead">Score: 1000</span>
+              <span class="md-head">SPI</span>
+              <span class="md-subhead">Score: 1.4</span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
          <md-card md-theme-watch="" md-whiteframe="8">
           <md-card-title>
             <md-card-title-text layout="column" layout-align="center center">
-              <span class="md-head">Chapter Name</span>
-              <span class="md-subhead">Score: 1000</span>
+              <span class="md-head">SPI</span>
+              <span class="md-subhead">Score: 2.1</span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
       </div>
     </div>
-  <md-card  md-theme-watch="" class="large">
+  <md-card  md-theme-watch="" ng-class="card_size">
     <md-toolbar >
       <div class="md-toolbar-tools">
         <h1 class="md-flex">SPI</h1>
@@ -51,7 +51,7 @@
     </md-card-title>
   </md-card>
  
-<md-card class="large">
+<md-card ng-class="card_size">
       <md-toolbar >
         <div class="md-toolbar-tools">
           <h2 class="md-flex">Reso Tip</h2>
@@ -73,9 +73,69 @@
         </div>
     </md-card>
 </md-tab>
+<md-tab ng-show="checkOldExam" label="Comparative Analysis">
+<md-card  ng-class="card_size" >
+      <md-toolbar >
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex">Status of weak topics of last exam</h2>
+                    <span flex=""></span>
+          <md-button class="md-raised" ng-click="showDialogInfo($event,overallAnalysisInfoTitle,overallAnalysisInfoContent)" aria-label="Learn More">
+          Learn More
+        </md-button>
+        </div>
+      </md-toolbar>
+      <md-card-content>
+        <table layout-fill>
+          <thead>
+            <tr>
+              <th>Topic Name</th>
+              <th>Result in last exam</th>
+              <th>Result in this exam</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="(key, name) in details.old_weak_to_normal">
+              <td>{{key}}</td>
+              <td>{{name.old_score_name}}</td>
+              <td>{{name.new_score_name}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </md-card-content>
+    </md-card>
+    <md-card  ng-class="card_size" >
+      <md-toolbar >
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex">Status of weak topics of this exam in last exam</h2>
+                    <span flex=""></span>
+          <md-button class="md-raised" ng-click="showDialogInfo($event,overallAnalysisInfoTitle,overallAnalysisInfoContent)" aria-label="Learn More">
+          Learn More
+        </md-button>
+        </div>
+      </md-toolbar>
+      <md-card-content>
+        <table layout-fill>
+          <thead>
+            <tr>
+              <th>Topic Name</th>
+              <th>Result in last exam</th>
+              <th>Result in this exam</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="(key, name) in details.old_normal_to_weak">
+              <td>{{key}}</td>
+              <td>{{name.old_score_name}}</td>
+              <td>{{name.new_score_name}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </md-card-content>
+    </md-card>
+
+  </md-tab>
 <md-tab label="Analysis">
-  
-<md-card  md-theme-watch="" class="large">
+<md-card  md-theme-watch="" ng-class="card_size">
     <md-toolbar >
       <div class="md-toolbar-tools">
         <h1 class="md-flex">Relative Comparison of Your Score vs. Average Score</h1>
@@ -89,7 +149,7 @@
       <canvas id="bar" chart-dataset-override="relative_datasetOverride" chart-options = "relative_options" chart-colors="relative_colors" class="chart chart-bar" chart-data="relative_data" chart-labels="relative_labels" chart-series="relative_series" layout-fill layout-align="center center"></canvas>
     </div>
   </md-card>
-  <md-card  class="large" >
+  <md-card  ng-class="card_size" >
       <md-toolbar >
         <div class="md-toolbar-tools">
           <h2 class="md-flex">Score Card</h2>
@@ -117,7 +177,7 @@
         </table>
       </md-card-content>
     </md-card>
-     <md-card  class="large" >
+     <md-card  ng-class="card_size" >
       <md-toolbar >
         <div class="md-toolbar-tools">
           <h2 class="md-flex">Overall Performance At Various Difficulty Levels</h2>
@@ -145,7 +205,7 @@
         </table>
       </md-card-content>
     </md-card>
-    <md-card  md-theme-watch="" class="large">
+    <md-card  md-theme-watch="" ng-class="card_size">
       <md-toolbar >
         <div class="md-toolbar-tools">
           <h1 class="md-flex">Difficulty Analysis</h1>
@@ -159,7 +219,7 @@
         <canvas id="bar" chart-dataset-override="difficulty_datasetOverride" chart-options = "difficulty_options" chart-colors="difficulty_colors" class="chart chart-bar" chart-data="difficulty_data" chart-labels="difficulty_labels" chart-series="difficulty_series" layout-fill layout-align="center center"></canvas>
       </div>
     </md-card>
-    <md-card class="large">
+    <md-card ng-class="card_size">
       <md-toolbar >
         <div class="md-toolbar-tools">
           <h2 class="md-flex">Topicwise Analysis</h2>
@@ -194,7 +254,7 @@
     </md-card>
 </md-tab>
 <md-tab label="Macro Analysis">
-  <md-card class="large"  >
+  <md-card ng-class="card_size"  >
   <md-toolbar >
     <div class="md-toolbar-tools">
       <span flex=""></span>
