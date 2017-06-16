@@ -16,7 +16,7 @@ angular.module('myApp', [
   $rootScope.base_url_api = "http://localhost:3000/"
 }]).service('userService', function(){
   this.getRootApi = function(){
-    return 'https://9cb8477c.ngrok.io/';
+    return 'https://704ab7e5.ngrok.io/';
   }
   this.setRollNo = function(data) {
           this.rollnumber = data;

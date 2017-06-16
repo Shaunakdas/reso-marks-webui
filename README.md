@@ -290,6 +290,31 @@ If you want to navigate to different pages in your application, but you also wan
 
 $http is used in integrating Http calls(Get, Post). You can add $http to view controller using this [approach][$http-starter] . If you get any issue, you can refer [here][$http-$scope-integrate]
 
+## Service
+
+Any service can be written in app.js. Service is used to store data across views. API endpoint is suggested to store here.
+
+## RouteProvider
+
+RouteProvider is used to link views to routes. It is provided in app.js. 
+```
+.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+  $locationProvider.hashPrefix('!');
+
+  $routeProvider.
+    when('#!/view1', {
+            template: '<view1></view1>'
+          }).
+          otherwise({redirectTo: '/view2'});
+}]);
+```
+## Screen Width adjustment
+
+Different css classes can be written for different screensize. [ng-class][[ngclass-w3scool-ref]] and [$window][$window-reference-docs] can be used to switch css class based on screenwidth. 
+
+
+
+
 [angularjs]: https://angularjs.org/
 [bower]: http://bower.io/
 [git]: https://git-scm.com/
@@ -310,3 +335,5 @@ $http is used in integrating Http calls(Get, Post). You can add $http to view co
 [cors-rails]: https://stackoverflow.com/questions/17858178/allow-anything-through-cors-policy
 [medium-angular-firebase-deploy]: https://medium.com/codingthesmartway-com-blog/hosting-angular-2-applications-on-firebase-f194688c978d
 [ng-route-starter]: https://www.w3schools.com/angular/angular_routing.asp 
+[$window-reference-docs]: https://docs.angularjs.org/api/ng/service/$window
+[ngclass-w3scool-ref]: https://www.w3schools.com/angular/ng_ng-class.asp

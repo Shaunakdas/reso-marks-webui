@@ -19,25 +19,20 @@
         </br>
         </md-card>
     </md-card>
-      <div flex-xs="" flex-gt-xs="50" layout="row"  layout-align="center center" layout-xs="column" >
-        <md-card md-theme-watch="" md-whiteframe="7">
-          <md-card-title>
-            <md-card-title-text layout="column"  layout-align="center center">
-              <span class="md-head">SPI</span>
-              <span class="md-subhead">Score: 1.4</span>
-            </md-card-title-text>
-          </md-card-title>
-        </md-card>
-         <md-card md-theme-watch="" md-whiteframe="8">
+      <md-card flex-xs="" flex-gt-xs="50" layout="row" layout-xs="column" layout-align="center center">
+        <md-card md-theme-watch="" md-whiteframe="12" class="stream" style='background-color: #42f4f1'>
           <md-card-title>
             <md-card-title-text layout="column" layout-align="center center">
-              <span class="md-head">SPI</span>
-              <span class="md-subhead">Score: 2.1</span>
+              <span class="md-headline">SPI</span>
+              <span class="md-head">{{details.spi}}</span>
             </md-card-title-text>
+            <md-card-title-media>
+            </md-card-title-media>
           </md-card-title>
+        </br>
         </md-card>
-      </div>
-    </div>
+    </md-card>
+  </div>
   <md-card  md-theme-watch="" ng-class="card_size">
     <md-toolbar >
       <div class="md-toolbar-tools">
